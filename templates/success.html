@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for the page to support proper text rendering -->
+    <meta charset="UTF-8">
+    
+    <!-- Viewport meta tag to ensure the page is responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page shown in the browser tab -->
+    <title>Success</title>
+
+    <style>
+        /* CSS styles for the page */
+        
+        /* General styling for the body of the page */
+        body {
+            font-family: Arial, sans-serif;  /* Sets the font family for the page */
+            text-align: center;  /* Centers the text horizontally */
+            padding: 50px;  /* Adds padding around the body */
+        }
+
+        /* Container that holds the main content */
+        .container {
+            max-width: 400px;  /* Sets the maximum width of the container */
+            margin: auto;  /* Centers the container horizontally */
+            padding: 20px;  /* Adds padding inside the container */
+            border: 1px solid #ccc;  /* Adds a light gray border around the container */
+            border-radius: 10px;  /* Rounds the corners of the container */
+        }
+
+        /* Heading styling */
+        h2 {
+            color: green;  /* Changes the color of the heading to green */
+        }
+
+        /* Paragraph styling */
+        p {
+            font-size: 18px;  /* Sets the font size for the paragraph */
+        }
+
+        /* Link styling */
+        a {
+            text-decoration: none;  /* Removes the underline from the link */
+            padding: 10px 15px;  /* Adds padding around the link for clickable area */
+            background: blue;  /* Sets the background color of the link */
+            color: white;  /* Changes the text color to white */
+            border-radius: 5px;  /* Rounds the corners of the link */
+            display: inline-block;  /* Makes the link behave like a block element */
+            margin-top: 10px;  /* Adds some space above the link */
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area -->
+    <div class="container">
+        
+        <!-- Success heading that shows a ticket submission success message -->
+        <h2>🎉 Ticket Submitted Successfully!</h2>
+        
+        <!-- A paragraph explaining that the ticket was received and is being reviewed -->
+        <p>Thank you for reaching out. Your issue has been received, and our team will review it shortly.</p>
+
+        <!-- A link that redirects the user back to the home page (index route) -->
+        <a href="{{ url_for('index') }}">Go Back to Home</a>
+    </div>
+</body>
+</html>

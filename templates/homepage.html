@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Internet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .content { padding: 40px 15px; }
+        .footer { text-align: center; padding: 20px; background: #f8f9fa; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('homepage') }}">MyWebsite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('homepage') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('blog') }}">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero text-center mt-4">
+        <h1 class="display-4">The Internet</h1>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="container content">
+        <h2>Understanding the Internet</h2>
+        <p>The Internet, as defined by Merriam-Webster, is an electronic communications network that connects computer networks and organizational computer facilities worldwide...</p>
+        
+        <h3>The Interns' Perspective</h3>
+        <p><strong>The Information-Based Internet:</strong> "The internet enables me to access information from various sectors of the world..."</p>
+        <p><strong>The Global Domain Internet:</strong> "An internet is a network that helps in accessing information online quickly..."</p>
+        <p><strong>The Global Connections Internet:</strong> "Internet is the global connection of computer networks..."</p>
+        <p><strong>The Research Internet:</strong> "For me, I think the internet is an easy way for probing..."</p>
+        <p><strong>The Knowledge Internet:</strong> "The internet in general is a modified way of accessing details of information..."</p>
+        <p><strong>The E-commerce Internet:</strong> "Internet is a global network which can be accessed by all users..."</p>
+        
+        <h3>What Do You Think?</h3>
+        <p>How would you explain the Internet to a young boy in Nsawam who has never heard of it?</p>
+    </div>
+
+    <!-- Submit Your Message Button -->
+    <div class="text-center mt-4">
+        <a href="{{ url_for('create_ticket') }}" class="btn btn-primary">Click to Submit Your Message</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer mt-4">
+        <p>Credits: <a href="https://www.merriam-webster.com/">Merriam-Webster</a>, <a href="http://frocktalk.com">FrockTalk</a>, The Interns.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

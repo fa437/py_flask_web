@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define the character encoding and viewport settings for responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Page title displayed in the browser tab -->
+    <title>Ticketing System</title>
+
+    <!-- Bootstrap CSS for styling and responsiveness -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Main content container with some top margin -->
+    <div class="container mt-5">
+        
+        <!-- Page heading centered at the top -->
+        <h2 class="text-center">Please Submit Your Message</h2>
+
+        <!-- Flash Messages: Display success or error messages dynamically -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}  <!-- Display the message content -->
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Button to create a new ticket -->
+        <a href="{{ url_for('create_ticket') }}" class="btn btn-primary mb-3">Submit a New Message</a>
+
+        <!-- Responsive table to display ticket details -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <!-- Table header section -->
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Issue</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through tickets and display each one as a table row -->
+                    {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ ticket.id }}</td>  <!-- Display ticket ID -->
+                        <td>{{ ticket.name }}</td>  <!-- Display user name -->
+                        <td>{{ ticket.email }}</td>  <!-- Display user email -->
+                        <td>{{ ticket.issue }}</td>  <!-- Display the issue description -->
+                        <td>{{ ticket.status }}</td>  <!-- Display current status -->
+
+                        <!-- Form to update ticket status -->
+                        <td>
+                            <form action="{{ url_for('update_ticket', id=ticket.id) }}" method="POST">
+                                <!-- Dropdown to select ticket status -->
+                                <select name="status" class="form-select">
+                                    <option value="Open" {% if ticket.status == "Open" %}selected{% endif %}>Open</option>
+                                    <option value="In Progress" {% if ticket.status == "In Progress" %}selected{% endif %}>In Progress</option>
+                                    <option value="Closed" {% if ticket.status == "Closed" %}selected{% endif %}>Closed</option>
+                                </select>
+                                <!-- Submit button to save the updated status -->
+                                <button type="submit" class="btn btn-success btn-sm mt-1">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript for interactive components (e.g., alerts, dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
