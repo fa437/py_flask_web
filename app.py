@@ -10,10 +10,6 @@ def homepage():
 def about():
     return render_template('about.html')
 
-@app.route('/blog')
-def blog():
-    return render_template('blog.html')
-
 @app.route('/contact')
 def contact():
     return render_template('/contact.html')
@@ -23,7 +19,7 @@ def create_ticket():
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
-        issue = request.form['issue']
+        issue = request.form['message']
         # Process and save the ticket
         return redirect(url_for('success'))  # Redirect after submission
     return render_template('create_ticket.html')
@@ -41,7 +37,7 @@ def submit_message():
 
 @app.route('/success')
 def success():
-    return "Your message has been submitted successfully!"
+    return render_template('success.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

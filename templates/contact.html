@@ -1,9 +1,30 @@
 {% extends "base.html" %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
 <div class="container text-center my-5">
     <p><strong>
-        !!!Under development!!!
+        I can be contacted below.
     </strong></p>
+
+    <!-- Submit Your Message Button -->
+    <div class="text-center mt-4 mb-5">
+        <a href="{{ url_for('create_ticket') }}" class="btn btn-primary">Click Here Submit Your Message</a>
+    </div>
+
+	<div>
+		<a href="https://www.linkedin.com/in/francis-asare-017280136/" target="_blank" class="mx-2">
+			<i class="fab fa-linkedin fa-2x"></i>
+		</a>
+		<a href="https://github.com/fa437" target="_blank" class="mx-2">
+			<i class="fab fa-github fa-2x"></i>
+		</a>
+		<a href="https://fkasare.wordpress.com" target="_blank" class="mx-2">
+			<i class="fab fa-wordpress fa-2x"></i>
+		</a>
+
+	</div>
+
 </div>
+
 {% endblock %}

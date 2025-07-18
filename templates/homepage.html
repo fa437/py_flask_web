@@ -1,57 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francis Asare</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .content { padding: 40px 15px; }
-        .footer { text-align: center; padding: 20px; background: #f8f9fa; }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('homepage') }}">Francis Asare</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('homepage') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('blog') }}">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- Blog Content -->
-    <div class="container content text-center">        
-    <p><strong>The E-commerce Internet:</strong> "Internet is a global network which can be accessed by all users"</p>
-    <p>How would you explain the Internet to a young boy in Nsawam who has never heard of it?</p>
+{% block content %}
+<div class="container content text-center my-5">
+    <p><strong>This is my personal website,</strong></p>
+    <p>Procurement, Business Operations, and IT.</p>
 </div>
-
-
-
-    <!-- Submit Your Message Button -->
-    <div class="text-center mt-4">
-        <a href="{{ url_for('create_ticket') }}" class="btn btn-primary">Click to Submit Your Message</a>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer mt-4">
-        <p>Credits: <a href="https://www.merriam-webster.com/">Merriam-Webster</a>, <a href="http://frocktalk.com">FrockTalk</a>, The Interns.</p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
-<!-- very important, add language switch to the page. eng/de/fr -->
+{% endblock %}

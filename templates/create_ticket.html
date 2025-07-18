@@ -1,67 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Define character encoding and viewport settings for responsiveness -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Page title displayed in the browser tab -->
-    <title>Submit Your Message</title>
-
-    <!-- Internal CSS styles for basic page layout and form design -->
-    <style>
-        /* Apply a clean and readable font to the page */
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 20px; 
-            padding: 10px; 
-        }
-
-        /* Center the form on the page and set a maximum width */
-        form { 
-            max-width: 400px; 
-            margin: auto; 
-        }
-
-        /* Ensure labels, inputs, and textareas take full width and have spacing */
-        label, input, textarea { 
-            display: block; 
-            width: 100%; 
-            margin-bottom: 10px; 
-        }
-
-        /* Style buttons for better appearance and usability */
-        button { 
-            padding: 10px; 
-            margin-right: 10px; 
-            cursor: pointer; 
-        }
-    </style>
-</head>
-<body>
+<div class="container my-5">
     <!-- Heading for the ticket creation form -->
-    <h2>Create a New Request</h2>
-    
-    <!-- Form to submit a new ticket -->
-	<form action="{{ url_for('create_ticket') }}" method="POST">
-		<div class="mb-3">
-			<label for="name" class="form-label">Name:</label>
-			<input type="text" class="form-control" id="name" name="name" required>
-		</div>
-		<div class="mb-3">
-			<label for="email" class="form-label">Email:</label>
-			<input type="email" class="form-control" id="email" name="email" required>
-		</div>
-		<div class="mb-3">
-			<label for="message" class="form-label">Your Message:</label>
-			<textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-		</div>
-		<button type="submit" class="btn btn-primary">Submit Ticket</button>
-	</form>	
-</body>
-</html>
+    <h2 class="text-center mb-4">I will get back to you as soon as I can.</h2>
 
+    <!-- Form to submit a new ticket -->
+    <form action="{{ url_for('create_ticket') }}" method="POST" class="mx-auto" style="max-width: 500px;">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Your Message:</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Message</button>
+    </form>
+</div>
 {% endblock %}
