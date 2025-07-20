@@ -20,8 +20,7 @@ def create_ticket():
         name = request.form['name']
         email = request.form['email']
         issue = request.form['message']
-        # Process and save the ticket
-        return redirect(url_for('success'))  # Redirect after submission
+        return redirect(url_for('success'))  
     return render_template('create_ticket.html')
 
 @app.route('/submit_message', methods=['POST'])
@@ -30,14 +29,14 @@ def submit_message():
     email = request.form['email']
     message = request.form['issue']
     
-    # Process the form (save to database, log, etc.)
     print(f"Name: {name}, Email: {email}, Message: {message}")
 
-    return redirect(url_for('success'))  # Redirect to success page
+    return redirect(url_for('success'))
 
 @app.route('/success')
 def success():
     return render_template('success.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(host="0.0.0.0", port=3000, debug=True)
+	app.run(debug=True)
